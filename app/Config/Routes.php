@@ -35,7 +35,11 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('siswa', 'SiswaController::index');
+$routes->get('siswa/(:segment)', 'SiswaController::show/$1');
+$routes->post('siswa', 'SiswaController::create');
+$routes->post('siswa/update/(:segment)', 'SiswaController::update/$1');
+$routes->delete('siswa/(:segment)', 'SiswaController::delete/$1');
 
 /*
  * --------------------------------------------------------------------
